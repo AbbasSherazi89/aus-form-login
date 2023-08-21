@@ -8,7 +8,28 @@
 </head>
 <body>
     <div class="welcome-main">
-        <h1>Welcome to the home.</h1>
+        
+        <form class="wel-form">
+            <input type="text" placeholder="Enter name" id="name"> <br/><br/>
+            <button type="button" value="Submit" onclick="manageData()">Add</button>
+        </form>
+        <br/><br/>
+        <p id="msg"></p>
+        <h2>List</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Sr. No</td>
+                    <td>Name</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody id="t-body">
+
+            </tbody>
+            
+        </table>
+        <br/><br/>
         <button type="button" id="logout">Logout</button>
     </div>
     <script src="logout.js"></script>

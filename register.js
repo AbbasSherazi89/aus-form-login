@@ -1,4 +1,3 @@
-
 let storeValues = [];
 
 let myName = document.getElementById("name");
@@ -24,18 +23,17 @@ document
 
     // Check if users array already exists in local storage
     let storedUsers = JSON.parse(localStorage.getItem("userdetails"));
-    // Store the updated array back in local storage
     localStorage.setItem("userdetails", JSON.stringify(storeValues));
     let existingUser = storedUsers?.find((val) => val.email === email);
 
     if (existingUser) {
-      // event.preventDefault();
-      alert("User already registered.");
+      alert("User already exists.");
+      storeValues = existingUser;
     } else {
+        storeValues = storedUsers;
+        storeValues.push(userDetails);
+        localStorage.setItem("userdetails", JSON.stringify(storeValues));
+        window.location.href = "login.html";
       // Storing the values in an array
-      storeValues = storedUsers;
-      storeValues.push(userDetails);
-      localStorage.setItem("userdetails", JSON.stringify(storeValues));
-      window.location.href = "login.html";
     }
   });
